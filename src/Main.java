@@ -1,6 +1,7 @@
-import Location.*;
-import Furniture.*;
-import People.*;
+import enums.Mood;
+import locations.*;
+import furniture.*;
+import people.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,9 +26,11 @@ public class Main {
 
         Mite Screw = new Mite("Шурупчик");
         Hammock hammock = new Hammock("Гамак Шурупчика", room, Screw);
-
+        Reader reader = new Reader("Читатель");
         Screw.pressButton(hammock.button);
+
         Screw.walk();
+        reader.setEmotions(Mood.AMAZED);
         Screw.pressButton(table1.button);
         Screw.pressButton(table2.button);
         Screw.pressButton(chair1.button);

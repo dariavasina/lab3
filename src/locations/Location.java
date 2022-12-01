@@ -1,6 +1,6 @@
-package Location;
+package locations;
 
-import Furniture.Furniture;
+import furniture.Furniture;
 
 import java.util.ArrayList;
 

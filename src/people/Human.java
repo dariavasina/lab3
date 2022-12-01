@@ -1,9 +1,12 @@
-package People;
+package people;
 
 public abstract class Human {
     private String name;
     private int height;
 
+    public Human(String name) {
+        setName(name);
+    }
     public void setName(String name) {
         this.name = name;
     }

@@ -1,7 +1,7 @@
-package Furniture;
+package furniture;
 
-import Interfaces.DependingOnTheButton;
-import Location.Location;
+import interfaces.DependingOnTheButton;
+import locations.Location;
 
 public abstract class Furniture implements DependingOnTheButton {
     private String name;

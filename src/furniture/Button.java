@@ -1,6 +1,6 @@
-package Furniture;
+package furniture;
 
-import Interfaces.DependingOnTheButton;
+import interfaces.DependingOnTheButton;
 
 public class Button {
     private boolean isPressed = false;

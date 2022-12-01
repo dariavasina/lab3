@@ -1,16 +1,15 @@
-package People;
+package people;
 
-import Furniture.Furniture;
-import Interfaces.AbleToPressButtons;
+import interfaces.AbleToPressButtons;
 
-import Furniture.Button;
+import furniture.Button;
 
 
 public class Mite extends Human implements AbleToPressButtons {
     public final int MAX_HEIGHT = 20;
 
     public Mite(String name) {
-        setName(name);
+        super(name);
     }
 
     @Override

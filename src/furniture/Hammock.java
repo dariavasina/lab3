@@ -1,8 +1,8 @@
-package Furniture;
+package furniture;
 
-import Interfaces.DependingOnTheButton;
-import Location.Location;
-import People.Human;
+import interfaces.DependingOnTheButton;
+import locations.Location;
+import people.Human;
 
 public class Hammock extends Furniture implements DependingOnTheButton {
     private int heightAboveGround = 20;

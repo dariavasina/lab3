@@ -1,7 +1,7 @@
-package Location;
+package locations;
 
-import Furniture.Button;
-import Interfaces.DependingOnTheButton;
+import furniture.Button;
+import interfaces.DependingOnTheButton;
 
 
 public class Underground extends Location implements DependingOnTheButton {
@@ -9,8 +9,7 @@ public class Underground extends Location implements DependingOnTheButton {
     public Underground(String name) {
         super(name);
     }
-
-
+    
     public void changeStatus() {
         System.out.println("Коротышка провалился в подполье!");
     }

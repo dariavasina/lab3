@@ -1,12 +1,11 @@
-package Furniture;
+package furniture;
 
-import Interfaces.DependingOnTheButton;
-import Location.Location;
+import locations.Location;
 
-public class Table extends Furniture implements DependingOnTheButton {
+public class Chair extends Furniture {
     private boolean isFolded = true;
 
-    public Table(String name, Location room) {
+    public Chair(String name, Location room) {
         super(name, room);
         System.out.printf("%s создан\n", name);
     }

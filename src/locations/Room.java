@@ -1,4 +1,4 @@
-package Location;
+package locations;
 
 public class Room extends Location {
     public Room(String name) {
