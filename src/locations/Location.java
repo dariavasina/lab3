@@ -29,4 +29,21 @@ public class Location {
         return furnitureInLocation;
     }
 
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Location locationToCompare = (Location) obj;
+        return this.hashCode() == locationToCompare.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
+
 }

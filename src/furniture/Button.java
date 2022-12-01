@@ -21,4 +21,21 @@ public class Button {
         isPressed = true;
         object.changeStatus();
     }
+
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Button buttonToCompare = (Button) obj;
+        return this.hashCode() == buttonToCompare.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        return object.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Кнопка на " + object.toString();
+    }
 }

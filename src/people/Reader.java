@@ -22,4 +22,6 @@ public class Reader extends Human{
             case TERRIFIED -> System.out.printf("%s испуган\n", getName());
         }
     }
+
+
 }

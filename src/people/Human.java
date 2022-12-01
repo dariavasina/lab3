@@ -1,5 +1,7 @@
 package people;
 
+import furniture.Button;
+
 public abstract class Human {
     private String name;
     private int height;
@@ -29,6 +31,23 @@ public abstract class Human {
 
     public void walk() {
         System.out.printf("%s принялся ходить\n", getName());
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Human personToCompare = (Human) obj;
+        return this.hashCode() == personToCompare.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return getName();
     }
 
 }

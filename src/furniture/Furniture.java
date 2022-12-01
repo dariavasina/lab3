@@ -21,7 +21,23 @@ public abstract class Furniture implements DependingOnTheButton {
         room.addFurnitureInLocation(this);
     }
 
-    public void changeStatus(Furniture furniture) {
+    public void changeStatus(Furniture furniture) {}
 
+    @Override
+    public int hashCode() {
+        return name.hashCode() * room.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Furniture furnitureToCompare = (Furniture) obj;
+        return this.hashCode() == furnitureToCompare.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return getName();
     }
 }
