@@ -1,14 +1,13 @@
 package furniture;
 
 import interfaces.DependingOnTheButton;
-import locations.Location;
+import locations.Location1;
 
 public class Table extends Furniture implements DependingOnTheButton {
     private boolean isFolded = true;
 
-    public Table(String name, Location room) {
+    public Table(String name, Location1 room) {
         super(name, room);
-        System.out.printf("%s создан\n", name);
     }
 
     public boolean isFolded() {
@@ -17,12 +16,11 @@ public class Table extends Furniture implements DependingOnTheButton {
 
     public void changeStatus() {
         if (isFolded) {
-            isFolded = false;
             System.out.printf("%s разложен\n", getName());
         }
         else {
-            isFolded = true;
             System.out.printf("%s сложен\n", getName());
         }
+        isFolded = !isFolded;
     }
 }

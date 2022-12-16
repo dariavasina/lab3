@@ -1,14 +1,13 @@
 package furniture;
 
 import interfaces.DependingOnTheButton;
-import locations.Location;
+import locations.Location1;
 
 public class Pantry extends Furniture implements DependingOnTheButton {
     private boolean isClosed = true;
 
-    public Pantry(String name, Location room) {
+    public Pantry(String name, Location1 room) {
         super(name, room);
-        System.out.printf("%s создана\n", name);
     }
 
     public boolean isClosed() {
@@ -17,12 +16,11 @@ public class Pantry extends Furniture implements DependingOnTheButton {
 
     public void changeStatus() {
         if (isClosed) {
-            isClosed = false;
             System.out.printf("%s открылась\n", getName());
         }
         else {
-            isClosed = true;
             System.out.printf("%s закрылась\n", getName());
         }
+        isClosed = !isClosed;
     }
 }

@@ -2,6 +2,8 @@ package furniture;
 
 import interfaces.DependingOnTheButton;
 
+import java.util.Objects;
+
 public class Button {
     private boolean isPressed = false;
     private DependingOnTheButton object;
@@ -22,16 +24,17 @@ public class Button {
         object.changeStatus();
     }
 
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Button buttonToCompare = (Button) obj;
-        return this.hashCode() == buttonToCompare.hashCode();
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Button button = (Button) o;
+        return isPressed == button.isPressed && object.equals(button.object);
     }
 
     @Override
     public int hashCode() {
-        return object.hashCode();
+        return Objects.hash(isPressed, object);
     }
 
     @Override

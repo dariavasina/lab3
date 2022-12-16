@@ -1,12 +1,14 @@
 package furniture;
 
 import interfaces.DependingOnTheButton;
-import locations.Location;
+import locations.Location1;
+
+import java.util.Objects;
 
 public abstract class Furniture implements DependingOnTheButton {
     private String name;
-    private Location room;
-    public Button button = new Button(this);
+    private Location1 room;
+    private Button button = new Button(this);
 
     public String getName() {
         return name;
@@ -16,24 +18,32 @@ public abstract class Furniture implements DependingOnTheButton {
         this.name = name;
     }
 
-    public Furniture(String name, Location room) {
-        setName(name);
-        room.addFurnitureInLocation(this);
+    public Button getButton() {
+        return button;
     }
 
-    public void changeStatus(Furniture furniture) {}
+    public Furniture(String name) {
+        this.name = name;
+    }
+
+    public Furniture(String name, Location1 room) {
+        this.name = name;
+        room.addFurnitureInLocation(this);
+        System.out.printf("Объект %s создан\n", name);
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Furniture furniture = (Furniture) o;
+        return Objects.equals(name, furniture.name) && room.equals(furniture.room) && button.equals(furniture.button);
+    }
 
     @Override
     public int hashCode() {
-        return name.hashCode() * room.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Furniture furnitureToCompare = (Furniture) obj;
-        return this.hashCode() == furnitureToCompare.hashCode();
+        return Objects.hash(name, room, button);
     }
 
     @Override

@@ -17,10 +17,19 @@ public class Mite extends Human implements AbleToPressButtons {
         super.setHeight(Math.min(height, MAX_HEIGHT));
     }
 
+    public void stretchOutOnTheFloor() {
+        System.out.printf("%s растянулся на полу\n", getName());
+    }
+
+    @Override
+    public void walk() {
+        System.out.printf("%s принялся ходить\n", getName());
+    }
+
     @Override
     public void pressButton(Button button) {
-            System.out.printf("%s нажал кнопку\n", getName());
-            button.press();
+        System.out.printf("%s нажал кнопку\n", getName());
+        button.press();
     }
 
 }

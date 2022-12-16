@@ -1,12 +1,11 @@
 package furniture;
 
 import interfaces.DependingOnTheButton;
-import locations.Location;
-import people.Human;
+import people.Human1;
 
 public class Hammock extends Furniture implements DependingOnTheButton {
     private int heightAboveGround = 20;
-    private Human person;
+    private Human1 person;
 
     public int getHeightAboveGround() {
         return heightAboveGround;
@@ -16,17 +15,17 @@ public class Hammock extends Furniture implements DependingOnTheButton {
         this.heightAboveGround = heightAboveGround;
     }
 
-    public void setPerson(Human person) {
+    public void setPerson(Human1 person) {
         this.person = person;
     }
 
-    public Human getPerson() {
+    public Human1 getPerson() {
         return person;
     }
 
-    public Hammock(String name, Location room, Human person) {
-        super(name, room);
-        setPerson(person);
+    public Hammock(String name, Human1 person) {
+        super(name);
+        this.person = person;
     }
 
     public void changeStatus() {

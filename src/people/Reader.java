@@ -2,11 +2,21 @@ package people;
 
 import enums.Mood;
 
-public class Reader extends Human{
+public class Reader{
     private Mood emotions = Mood.CALM;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    private String name;
+
     public Reader(String name) {
-        super(name);
+        this.name = name;
     }
 
     public Mood getEmotions() {

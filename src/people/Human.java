@@ -25,13 +25,9 @@ public abstract class Human {
         return height;
     }
 
-    public void stretchOutOnTheFloor() {
-        System.out.printf("%s растянулся на полу\n", getName());
-    }
+    public abstract void stretchOutOnTheFloor();
 
-    public void walk() {
-        System.out.printf("%s принялся ходить\n", getName());
-    }
+    public abstract void walk();
 
     public boolean equals(Object obj) {
         if (this == obj) return true;

@@ -1,13 +1,12 @@
 package furniture;
 
 import interfaces.DependingOnTheButton;
-import locations.Location;
+import locations.Location1;
 
 public class Shelf extends Furniture implements DependingOnTheButton {
     private boolean isFolded = true;
-    public Shelf(String name, Location room) {
+    public Shelf(String name, Location1 room) {
         super(name, room);
-        System.out.printf("%s создана\n", name);
     }
 
     public boolean isFolded() {
@@ -16,12 +15,11 @@ public class Shelf extends Furniture implements DependingOnTheButton {
 
     public void changeStatus() {
         if (isFolded) {
-            isFolded = false;
             System.out.printf("%s откинулась\n", getName());
         }
         else {
-            isFolded = true;
             System.out.printf("%s сложилась\n", getName());
         }
+        isFolded = !isFolded;
     }
 }

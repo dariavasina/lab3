@@ -4,8 +4,14 @@ import furniture.Furniture;
 
 import java.util.ArrayList;
 
-public class Location {
+public abstract class Location {
     private String name;
+
+    public Location(String name) {
+        this.name = name;
+        System.out.printf("Локация %s создана\n", name);
+    }
+
 
     public String getName() {
         return name;
@@ -13,10 +19,6 @@ public class Location {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Location(String name) {
-        setName(name);
     }
 
     private ArrayList<Furniture> furnitureInLocation = new ArrayList<>();
@@ -34,6 +36,7 @@ public class Location {
         return name.hashCode();
     }
 
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;

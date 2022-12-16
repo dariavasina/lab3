@@ -1,14 +1,13 @@
 package furniture;
 
 import interfaces.DependingOnTheButton;
-import locations.Location;
+import locations.Location1;
 
 public class Wardrobe extends Furniture implements DependingOnTheButton {
     private boolean isClosed = true;
 
-    public Wardrobe(String name, Location room) {
+    public Wardrobe(String name, Location1 room) {
         super(name, room);
-        System.out.printf("%s создан\n", name);
     }
 
     public boolean isClosed() {
@@ -17,12 +16,11 @@ public class Wardrobe extends Furniture implements DependingOnTheButton {
 
     public void changeStatus() {
         if (isClosed) {
-            isClosed = false;
             System.out.printf("%s открылся\n", getName());
         }
         else {
-            isClosed = true;
             System.out.printf("%s закрылся\n", getName());
         }
+        isClosed = !isClosed;
     }
 }
