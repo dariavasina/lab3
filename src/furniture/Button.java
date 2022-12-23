@@ -29,7 +29,10 @@ public class Button {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Button button = (Button) o;
-        return isPressed == button.isPressed && object.equals(button.object);
+        if (this.hashCode() == button.hashCode()) {
+            return (isPressed == button.isPressed) && (object.equals(button.object));
+        }
+        return false;
     }
 
     @Override

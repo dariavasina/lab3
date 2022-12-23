@@ -78,10 +78,10 @@ public class Mite1 extends Human1 implements AbleToPressButtons {
 
     public void drive(Car car) {
         try {
-            car.startToDrive(this);
+            car.go(this);
             System.out.printf("%s поехал на машине\n", getName());
             System.out.printf("%s продемонстрировал езду на машине во всех положениях\n", getName());
-            car.finishDriving();
+            car.finish();
         } catch (DriverIsNotAnOwnerException e) {
             System.out.printf("%s не может управлять машиной - он не водитель\n", getName());
         }

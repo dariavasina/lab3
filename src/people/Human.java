@@ -2,6 +2,8 @@ package people;
 
 import furniture.Button;
 
+import java.util.Objects;
+
 public abstract class Human {
     private String name;
     private int height;
@@ -33,7 +35,10 @@ public abstract class Human {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Human personToCompare = (Human) obj;
-        return this.hashCode() == personToCompare.hashCode();
+        if (this.hashCode() == personToCompare.hashCode()) {
+            return (Objects.equals(this.name, personToCompare.name)) && (this.height == personToCompare.height);
+        }
+        return false;
     }
 
     @Override

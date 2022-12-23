@@ -10,6 +10,7 @@ public class Mite extends Human implements AbleToPressButtons {
 
     public Mite(String name) {
         super(name);
+        System.out.printf("Коротышка %s создан\n", getName());
     }
 
     @Override

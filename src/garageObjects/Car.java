@@ -19,7 +19,7 @@ public class Car {
         System.out.printf("Машина с %d колесами создана\n", wheelNumber);
     }
 
-    public void startToDrive(Human1 driver) throws DriverIsNotAnOwnerException {
+    public void go(Human1 driver) throws DriverIsNotAnOwnerException {
         if (!Objects.equals(driver, owner)) {
             throw new DriverIsNotAnOwnerException();
         }
@@ -31,20 +31,29 @@ public class Car {
         }
     }
 
-    public void finishDriving() {
+    public void finish() {
         engine.stop();
     }
 
     public class Engine {
         public void start() {
-            System.out.println("Машина заведена");
-        };
+            System.out.println("Двигатель заведен");
+        }
         public void stop() {
             System.out.println("Двигатель выключен");
-        };
+        }
     }
 
-    public class Wheel {
-        public void spin() {};
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Car car = (Car) object;
+        return owner.equals(car.owner) && engine.equals(car.engine) && wheels.equals(car.wheels);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(owner, engine, wheels);
     }
 }

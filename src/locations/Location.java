@@ -3,6 +3,7 @@ package locations;
 import furniture.Furniture;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public abstract class Location {
     private String name;
@@ -32,16 +33,16 @@ public abstract class Location {
     }
 
     @Override
-    public int hashCode() {
-        return name.hashCode();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Location location = (Location) o;
+        return name.equals(location.name) && Objects.equals(furnitureInLocation, location.furnitureInLocation);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Location locationToCompare = (Location) obj;
-        return this.hashCode() == locationToCompare.hashCode();
+    public int hashCode() {
+        return Objects.hash(name, furnitureInLocation);
     }
 
     @Override

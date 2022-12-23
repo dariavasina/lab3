@@ -7,7 +7,6 @@ import java.util.ArrayList;
 public abstract class Location1 extends Location{
     public Location1(String name) {
         super(name);
-        System.out.printf("Локация %s создана\n", name);
     }
 
     private ArrayList<Human1> peopleInLocation = new ArrayList<>();
