@@ -70,7 +70,5 @@ public class Main {
         Rabbet.enterLocation(garage);
 
         Screw.drive(car);
-
-        System.out.println("" + Screw);
     }
 }
